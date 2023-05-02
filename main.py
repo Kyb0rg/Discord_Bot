@@ -48,7 +48,7 @@ async def on_member_join(member: discord.Member):
             embed.add_field(name="📚**Rules**",value="Please make sure that you read the rules")
             embed.add_field(name="❓**Support**",value="If you have any questions open a ticket ")
             embed.add_field(name="🍿**Enjoy**",value=f"Have Fun and enjoy chatting and talking on the Server **{server.name}**")
-            embed.set_footer(text="⭐  • SSPŠ 0.K | Systems")
+            embed.set_footer(text="⭐  SSPŠ 0.K | Prestiž")
             await channel.send(embed=embed)
     except Exception as e:
         print(e) 
