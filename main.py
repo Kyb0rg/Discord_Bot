@@ -15,6 +15,7 @@ colorama.init()
 
 
 openai.api_key = ''
+main_name = "⭐  SSPŠ 0.K | Prestiž"
 
 
 
@@ -48,7 +49,7 @@ async def on_member_join(member: discord.Member):
             embed.add_field(name="📚**Rules**",value="Please make sure that you read the rules")
             embed.add_field(name="❓**Support**",value="If you have any questions open a ticket ")
             embed.add_field(name="🍿**Enjoy**",value=f"Have Fun and enjoy chatting and talking on the Server **{server.name}**")
-            embed.set_footer(text="⭐  SSPŠ 0.K | Prestiž")
+            embed.set_footer(text=main_name)
             await channel.send(embed=embed)
     except Exception as e:
         print(e) 
@@ -67,12 +68,12 @@ async def ban_user(interaction: discord.Interaction, user: discord.User, reason:
             embed.add_field(name="📆**Date **", value=interaction.created_at.strftime("%Y-%m-%d"))
             embed.add_field(name="🆔**User ID**", value=user.id)
             embed.add_field(name="💬**Reason**", value=reason)
-            embed.set_footer(text="⭐  SSPŠ 0.K | Prestiž")
+            embed.set_footer(text=main_name)
             await interaction.response.send_message(embed=embed)
             logging.info(f"Command = ban ; Author = {interaction.user.name} ; Banned = {str(user.name)}; Reason = {reason}")
         else:
             embed = discord.Embed(title="**You don't have the permission for that Command**", color=discord.Colour.random())
-            embed.set_footer(text="⭐  SSPŠ 0.K | Prestiž")
+            embed.set_footer(text=main_name)
             await interaction.response.send_message(embed=embed, ephemeral=True)
     else:
         embed = discord.Embed(title='Error', description = 'Command is deactivated', color=discord.Colour.red())
@@ -96,13 +97,13 @@ async def kick(interaction: discord.Interaction, user: discord.User, reason: str
             embed.add_field(name="🆔**User ID**", value=user.id)
             embed.add_field(name="💬**Reason**", value=reason)
             embed.set_thumbnail(url=server.icon.url)
-            embed.set_footer(text="⭐  SSPŠ 0.K | Prestiž")
+            embed.set_footer(text=main_name)
             logging.info(f"Command = kick ; Author = {interaction.user.name} ; kicked = {str(user.name)}; Reason = {reason}")
             await interaction.response.send_message(embed=embed)
         else:
             embed = discord.Embed(title="**You don't have the permission for that Command**",
                                 color=discord.Colour.random())
-            embed.set_footer(text="⭐  SSPŠ 0.K | Prestiž")
+            embed.set_footer(text=main_name)
             await interaction.response.send_message(embed=embed, ephemeral=True)
     else:
         embed = discord.Embed(title='Error', description = 'Command is deactivated', color=discord.Colour.red())
@@ -132,7 +133,7 @@ async def gen(interaction: discord.Interaction, text: str):
                                 color=discord.Colour.random())
         embed.add_field(name='**User -->**', value=text)
         embed.add_field(name="🔍**AI -->**", value= response, inline= False)
-        embed.set_footer(text="⭐  SSPŠ 0.K | Prestiž")
+        embed.set_footer(text=main_name)
         await asyncio.sleep(5)
         await interaction.followup.send(embed=embed)
         logging.info(f"Command = gen ; Author = {interaction.user.name} ; Message = {text}; Response = {response}")
@@ -153,7 +154,7 @@ async def help(interaction: discord.Interaction):
         embed.add_field(name="⚙️**admin**", value="list all admin commands")
         embed.add_field(name="ℹ️**userinfo**", value="gives information about an user")
         embed.add_field(name="🔰**roles**", value="list all server roles")
-        embed.set_footer(text="⭐  SSPŠ 0.K | Prestiž")
+        embed.set_footer(text=main_name)
         await interaction.response.send_message(embed=embed)
     else:
         embed = discord.Embed(title='Error', description = 'Command is deactivated', color=discord.Colour.red())
@@ -178,7 +179,7 @@ async def serverinfo(interaction: discord.Interaction):
         embed.add_field(name="👑**Server Owner**", value=server.owner)
         embed.add_field(name="👥**Server Member Count**", value=server.member_count)
         embed.set_thumbnail(url=server.icon.url)
-        embed.set_footer(text="⭐  SSPŠ 0.K | Prestiž")
+        embed.set_footer(text=main_name)
         await interaction.response.send_message(embed=embed)
     else: 
         embed = discord.Embed(title='Error', description = 'Command is deactivated', color=discord.Colour.red())
@@ -197,12 +198,12 @@ async def admin(interaction: discord.Interaction):
             embed.add_field(name="🔐**.mute**", value="chat-locks a user")
             embed.add_field(name="🔓**.unmute**", value="unlock a user (from the chat)")
             embed.add_field(name="⚙️**.admin**", value="list all admin commands")
-            embed.set_footer(text="⭐  SSPŠ 0.K | Prestiž")
+            embed.set_footer(text=main_name)
             await interaction.response.send_message(embed=embed)
         else:
             embed = discord.Embed(title="**You don't have the permission for that Command**",
                                 color=discord.Colour.random())
-            embed.set_footer(text="⭐  SSPŠ 0.K | Prestiž")
+            embed.set_footer(text=main_name)
             await interaction.response.send_message(embed=embed)
     else:
         embed = discord.Embed(title='Error', description = 'Command is deactivated', color=discord.Colour.red())
@@ -218,12 +219,12 @@ async def rules(interaction: discord.Interaction):
             embed.add_field(name="**1**", value="respektujte se")
             embed.add_field(name="**2**", value="nsfw jen ve formě hentai v #⁠hentai-only jinak ban", inline=False)
             embed.add_field(name="**3**", value="Udrzujte demokracii", inline= False)  
-            embed.set_footer(text="⭐  SSPŠ 0.K | Prestiž")
+            embed.set_footer(text=main_name)
             await interaction.response.send_message(embed=embed)
         else:
             embed = discord.Embed(title="**You don't have the permission for that Command**",
                                     color=discord.Colour.random())
-            embed.set_footer(text="⭐  SSPŠ 0.K | Prestiž")
+            embed.set_footer(text=main_name)
             await interaction.response.send_message(embed=embed)
     else:
         embed = discord.Embed(title='Error', description = 'Command is deactivated', color=discord.Colour.red())
@@ -236,7 +237,7 @@ async def slusnost(interaction: discord.Interaction):
         embed = discord.Embed(title=f"**Značka slušnost**",
                               color=discord.Colour.random())
         embed.add_field(name = 'Ahoj, vidím že jsi nevychovaný spratek. Bude ti tímto udělena hodnost čůráka, jelikož i já robot vím, jak slušně pozdravit a poděkovat.', value='Nashledanou')
-        embed.set_footer(text="⭐  SSPŠ 0.K | Prestiž")
+        embed.set_footer(text=main_name)
         await interaction.response.send_message(embed=embed)
 
 
@@ -254,19 +255,19 @@ async def clear(interaction: discord.Interaction, amount: int = 0):
                                     color=discord.Colour.random())
                 embed.add_field(name="🆔 **User ID**", value=interaction.user.id)
                 embed.add_field(name="📆**Cleared Messages At**", value=interaction.created_at.strftime("%Y-%m-%d %H:%M:%S"))
-                embed.set_footer(text="⭐  SSPŠ 0.K | Prestiž")
+                embed.set_footer(text=main_name)
                 await asyncio.sleep(2)
                 await interaction.followup.send(embed=embed)
                 logging.info(f"Command = clear ; Author = {interaction.user.name} ; Cleared = {amount}")
             except ValueError:
                 embed = discord.Embed(title="**Please enter a valid number of messages to delete.**",
                                     color=discord.Colour.random())
-                embed.set_footer(text="⭐  SSPŠ 0.K | Prestiž")
+                embed.set_footer(text=main_name)
                 await interaction.response.send_message(embed=embed, ephemeral=True)
         else:
             embed = discord.Embed(title="**You don't have the permission for that Command**",
                                 color=discord.Colour.random())
-            embed.set_footer(text="⭐  SSPŠ 0.K | Prestiž")
+            embed.set_footer(text=main_name)
             await interaction.response.send_message(embed=embed, ephemeral=True)
     else: 
         embed = discord.Embed(title='Error', description = 'Command is deactivated', color=discord.Colour.red())
@@ -325,14 +326,14 @@ async def broadcast(interaction: discord.Interaction, message: str):
             channel = client.get_channel(1101885160531705938)
             embed = discord.Embed(title='** :gem: Announcement :gem: ** ', color=discord.Color.blurple())
             embed.add_field(name=message, value=f'Za prestižní třídu: {interaction.user.name}')
-            embed.set_footer(text="⭐  SSPŠ 0.K | Prestiž")
+            embed.set_footer(text=main_name)
             await channel.send(embed=embed)
             embed2 = discord.Embed(title='**Sended** ', color=discord.Color.blurple())
             await interaction.response.send_message(embed=embed2)
         else:
             embed = discord.Embed(title="**You don't have the permission for that Command**",
                                 color=discord.Colour.random())
-            embed.set_footer(text="⭐  SSPŠ 0.K | Prestiž")
+            embed.set_footer(text=main_name)
             await interaction.response.send_message(embed=embed, ephemeral=True)
     else: 
         embed = discord.Embed(title='Error', description = 'Command is deactivated', color=discord.Colour.red())
@@ -426,7 +427,7 @@ async def star(interaction: discord.Interaction, user: discord.Member, reason: s
                             if user.avatar:
                                 embed.set_image(url=user.avatar.url)
                                 
-                            embed.set_footer(text="⭐  SSPŠ 0.K | Prestiž")
+                            embed.set_footer(text=main_name)
                             await interaction.response.send_message(embed=embed)
                     elif config2.PROMOTION == 2:
                         role_id = 1101872150186569828
@@ -442,7 +443,7 @@ async def star(interaction: discord.Interaction, user: discord.Member, reason: s
                             if user.avatar:
                                 embed.set_image(url=user.avatar.url)
                                 
-                            embed.set_footer(text="⭐  SSPŠ 0.K | Prestiž")
+                            embed.set_footer(text=main_name)
                             await interaction.response.send_message(embed=embed)
                     elif config2.PROMOTION == 1:
                         role_id = 1101872150186569828
@@ -458,14 +459,14 @@ async def star(interaction: discord.Interaction, user: discord.Member, reason: s
                             if user.avatar:
                                 embed.set_image(url=user.avatar.url)
                                 
-                            embed.set_footer(text="⭐  SSPŠ 0.K | Prestiž")
+                            embed.set_footer(text=main_name)
                             await interaction.response.send_message(embed=embed)
                     else:
                         embed = discord.Embed(title='Error', description='Promotion level not valid', color=discord.Colour.red())
                         await interaction.response.send_message(embed=embed)             
             else:
                 embed = discord.Embed(title="**You don't have the permission for that command**", color=discord.Colour.random())
-                embed.set_footer(text="⭐  SSPŠ 0.K | Prestiž")
+                embed.set_footer(text=main_name)
                 await interaction.response.send_message(embed=embed, ephemeral=True)
         else:
             embed = discord.Embed(title='Error', description='Command is deactivated', color=discord.Colour.red())
@@ -496,7 +497,7 @@ async def star(interaction: discord.Interaction, user: discord.Member):
                             if user.avatar:
                                 embed.set_image(url=user.avatar.url)
                                 
-                            embed.set_footer(text="⭐  SSPŠ 0.K | Prestiž")
+                            embed.set_footer(text=main_name)
                             await interaction.response.send_message(embed=embed)
                     elif config2.PROMOTION == 2:
                         role_id = 1101872150186569828
@@ -512,7 +513,7 @@ async def star(interaction: discord.Interaction, user: discord.Member):
                             if user.avatar:
                                 embed.set_image(url=user.avatar.url)
                                 
-                            embed.set_footer(text="⭐  SSPŠ 0.K | Prestiž")
+                            embed.set_footer(text=main_name)
                             await interaction.response.send_message(embed=embed)
                     elif config2.PROMOTION == 1:
                         role_id = 1101872150186569828
@@ -528,14 +529,14 @@ async def star(interaction: discord.Interaction, user: discord.Member):
                             if user.avatar:
                                 embed.set_image(url=user.avatar.url)
                                 
-                            embed.set_footer(text="⭐  SSPŠ 0.K | Prestiž")
+                            embed.set_footer(text=main_name)
                             await interaction.response.send_message(embed=embed)
                     else:
                         embed = discord.Embed(title='Error', description='Promotion level not valid', color=discord.Colour.red())
                         await interaction.response.send_message(embed=embed)
             else:
                 embed = discord.Embed(title="**You don't have the permission for that command**", color=discord.Colour.random())
-                embed.set_footer(text="⭐  SSPŠ 0.K | Prestiž")
+                embed.set_footer(text=main_name)
                 await interaction.response.send_message(embed=embed, ephemeral=True)
         else:
             embed = discord.Embed(title='Error', description='Command is deactivated', color=discord.Colour.red())
